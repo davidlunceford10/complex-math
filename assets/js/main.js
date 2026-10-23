@@ -2,6 +2,10 @@
 	ZeroFour by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Template script (jQuery, not a module): sets the screen-size breakpoints, opens the
+	Math Topics drop-down on hover, and builds the slide-out menu used on phones.
+	Complex Math's own code is in assets/js/modules and assets/js/pages.
 */
 
 (function($) {

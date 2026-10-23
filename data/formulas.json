@@ -1,0 +1,459 @@
+{
+	"topics": [
+		{
+			"id": "algebra",
+			"name": "Algebra",
+			"page": "algebra.html",
+			"icon": "fa-superscript",
+			"tagline": "Solve for the unknown",
+			"description": "Algebra is the language the rest of math is written in. Learn to isolate variables, read the slope of a line, factor expressions, and use the quadratic formula without second-guessing every sign.",
+			"image": "https://images.unsplash.com/photo-1699275303936-302a8d351a80?auto=format&fit=crop&w=800&h=500&q=80",
+			"imageAlt": "Handwritten algebra equations on grid paper",
+			"formulas": [
+				{
+					"id": "linear-equations",
+					"name": "Solving Linear Equations",
+					"formula": "ax + b = c  →  x = (c − b) ÷ a",
+					"summary": "Undo the operations around x in reverse order until x is alone on one side of the equals sign.",
+					"whenToUse": "Any equation where x appears only to the first power, such as 3x + 5 = 20 or 7 − 2x = 1.",
+					"watchOut": "Whatever you do to one side, you must do to the other. Undo addition and subtraction before multiplication and division.",
+					"example": "Solve 3x + 5 = 20",
+					"steps": [
+						{
+							"title": "Identify the parts",
+							"text": "Write the equation and spot what is happening to x: it is multiplied by 3, then 5 is added. We will undo those in reverse order.",
+							"work": ["3x + 5 = 20"]
+						},
+						{
+							"title": "Subtract 5 from both sides",
+							"text": "The last thing done to x was \"+ 5\", so undo it first. Subtracting 5 from both sides keeps the equation balanced.",
+							"work": ["3x + 5 − 5 = 20 − 5", "3x = 15"]
+						},
+						{
+							"title": "Divide both sides by 3",
+							"text": "Now x is multiplied by 3. Divide both sides by 3 to get x by itself.",
+							"work": ["3x ÷ 3 = 15 ÷ 3", "x = 5"]
+						},
+						{
+							"title": "Check your answer",
+							"text": "Plug x = 5 back into the original equation. If both sides match, the answer is correct.",
+							"work": ["3(5) + 5 = 15 + 5 = 20 ✓"]
+						}
+					]
+				},
+				{
+					"id": "slope-intercept",
+					"name": "Slope and Slope-Intercept Form",
+					"formula": "m = (y₂ − y₁) ÷ (x₂ − x₁),   y = mx + b",
+					"summary": "Slope (m) measures how steep a line is: rise over run. Once you know m and one point, you can find the y-intercept (b) and write the line's equation.",
+					"whenToUse": "You are given two points and need the equation of the line through them, or need to describe a constant rate of change.",
+					"watchOut": "Subtract in the same order on top and bottom. If you start with y₂ on top, you must start with x₂ on the bottom.",
+					"example": "Find the line through (1, 3) and (3, 7)",
+					"diagram": {
+						"type": "graph",
+						"fn": "2*x + 1",
+						"x": [-1, 4],
+						"y": [-1, 9],
+						"points": [[1, 3], [3, 7]]
+					},
+					"steps": [
+						{
+							"title": "Label your points",
+							"text": "Call one point (x₁, y₁) and the other (x₂, y₂). It does not matter which is which, as long as you stay consistent.",
+							"work": ["(x₁, y₁) = (1, 3)", "(x₂, y₂) = (3, 7)"]
+						},
+						{
+							"title": "Plug into the slope formula",
+							"text": "Rise over run: the change in y divided by the change in x, subtracting in the same order on top and bottom.",
+							"work": ["m = (7 − 3) ÷ (3 − 1)"]
+						},
+						{
+							"title": "Simplify the slope",
+							"text": "The line rises 4 units for every 2 units it runs to the right, so the slope is 2.",
+							"work": ["m = 4 ÷ 2 = 2"]
+						},
+						{
+							"title": "Solve for b",
+							"text": "Substitute m = 2 and either point into y = mx + b, then solve for b. Here we use (1, 3).",
+							"work": ["3 = 2(1) + b", "b = 1"]
+						},
+						{
+							"title": "Write the equation",
+							"text": "Put m and b back into slope-intercept form. You can check it with the other point: 2(3) + 1 = 7 ✓.",
+							"work": ["y = 2x + 1"]
+						}
+					]
+				},
+				{
+					"id": "factoring-trinomials",
+					"name": "Factoring Trinomials",
+					"formula": "x² + bx + c = (x + p)(x + q),  where p · q = c and p + q = b",
+					"summary": "Factoring rewrites a trinomial as a product of two binomials. You are looking for two numbers that multiply to c and add to b.",
+					"whenToUse": "Simplifying expressions, solving quadratics that factor nicely, and canceling terms in fractions (you'll need it in calculus limits too).",
+					"watchOut": "The pair has to satisfy both conditions. Many pairs multiply to c, but only one also adds to b. Watch the signs when c is negative.",
+					"example": "Factor x² + 5x + 6",
+					"steps": [
+						{
+							"title": "Identify b and c",
+							"text": "Compare the trinomial to x² + bx + c. The middle coefficient is b and the constant is c.",
+							"work": ["x² + 5x + 6", "b = 5,  c = 6"]
+						},
+						{
+							"title": "List factor pairs of c",
+							"text": "Write every pair of whole numbers that multiplies to 6, then check which pair adds to 5.",
+							"work": ["1 · 6  →  sum 7", "2 · 3  →  sum 5 ✓"]
+						},
+						{
+							"title": "Write the factors",
+							"text": "The winning pair is 2 and 3, so each goes into its own binomial with x.",
+							"work": ["(x + 2)(x + 3)"]
+						},
+						{
+							"title": "Check by multiplying (FOIL)",
+							"text": "Multiply the binomials back out. If you get the original trinomial, the factoring is correct.",
+							"work": ["x² + 3x + 2x + 6", "= x² + 5x + 6 ✓"]
+						}
+					]
+				},
+				{
+					"id": "quadratic-formula",
+					"name": "The Quadratic Formula",
+					"formula": "x = (−b ± √(b² − 4ac)) ÷ 2a",
+					"summary": "The quadratic formula solves any equation of the form ax² + bx + c = 0, even when it will not factor.",
+					"whenToUse": "Whenever you have a quadratic set equal to zero and factoring is hard or impossible.",
+					"watchOut": "Keep the sign of every coefficient (c = −2, not 2). The whole numerator is divided by 2a, not just the square root. The ± means there are usually two answers.",
+					"example": "Solve 2x² + 3x − 2 = 0",
+					"diagram": {
+						"type": "graph",
+						"fn": "2*x*x + 3*x - 2",
+						"x": [-3, 2],
+						"y": [-4, 8],
+						"points": [[-2, 0], [0.5, 0]]
+					},
+					"steps": [
+						{
+							"title": "Identify a, b, and c",
+							"text": "Make sure the equation equals zero, then read off the coefficients, signs included.",
+							"work": ["2x² + 3x − 2 = 0", "a = 2,  b = 3,  c = −2"]
+						},
+						{
+							"title": "Compute the discriminant",
+							"text": "The part under the square root, b² − 4ac, is called the discriminant. Work it out first so the rest stays tidy. Two negatives multiply to a positive.",
+							"work": ["b² − 4ac = 3² − 4(2)(−2)", "= 9 + 16 = 25"]
+						},
+						{
+							"title": "Plug into the formula",
+							"text": "Substitute b, the discriminant, and a. The square root of 25 is 5.",
+							"work": ["x = (−3 ± √25) ÷ (2 · 2)", "x = (−3 ± 5) ÷ 4"]
+						},
+						{
+							"title": "Split the ±",
+							"text": "Do the problem once with + and once with −. Each gives one solution.",
+							"work": ["x = (−3 + 5) ÷ 4 = 1/2", "x = (−3 − 5) ÷ 4 = −2"]
+						},
+						{
+							"title": "Check a solution",
+							"text": "Plug a solution back in to confirm it gives zero. On the graph, both solutions are where the parabola crosses the x-axis.",
+							"work": ["2(1/2)² + 3(1/2) − 2", "= 0.5 + 1.5 − 2 = 0 ✓"]
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "geometry",
+			"name": "Geometry",
+			"page": "geometry.html",
+			"icon": "fa-shapes",
+			"tagline": "Measure shapes and space",
+			"description": "Geometry is about the size and shape of things. Learn the formulas for right triangles, areas, circles, and volume, and how to tell which measurement goes where.",
+			"image": "https://images.unsplash.com/photo-1764948620396-45f5b5fdd73e?auto=format&fit=crop&w=800&h=500&q=80",
+			"imageAlt": "A drafting compass drawing a circle on paper",
+			"formulas": [
+				{
+					"id": "pythagorean-theorem",
+					"name": "The Pythagorean Theorem",
+					"formula": "a² + b² = c²",
+					"summary": "In a right triangle, the squares of the two legs add up to the square of the hypotenuse (the longest side).",
+					"whenToUse": "Finding a missing side of a right triangle, or the straight-line distance between two points.",
+					"watchOut": "c is always the hypotenuse, the side across from the right angle. Square each side before adding; (3 + 4)² is not the same as 3² + 4².",
+					"example": "Legs of 3 and 4. Find the hypotenuse.",
+					"diagram": { "type": "right-triangle", "a": "3", "b": "4", "c": "c = ?" },
+					"steps": [
+						{
+							"title": "Label the sides",
+							"text": "The two sides that form the right angle are the legs, a and b. The side across from the right angle is the hypotenuse, c.",
+							"work": ["a = 3,  b = 4,  c = ?"]
+						},
+						{
+							"title": "Substitute into the formula",
+							"text": "Replace a and b with the leg lengths.",
+							"work": ["3² + 4² = c²"]
+						},
+						{
+							"title": "Square and add",
+							"text": "Square each leg first, then add the results.",
+							"work": ["9 + 16 = c²", "25 = c²"]
+						},
+						{
+							"title": "Take the square root",
+							"text": "c² is 25, so c is the positive square root of 25. Side lengths are never negative.",
+							"work": ["c = √25 = 5"]
+						}
+					]
+				},
+				{
+					"id": "triangle-area",
+					"name": "Area of a Triangle",
+					"formula": "A = ½ · b · h",
+					"summary": "A triangle is exactly half of a rectangle with the same base and height, so its area is half of base times height.",
+					"whenToUse": "Finding the area of any triangle when you know a base and the height to that base.",
+					"watchOut": "The height must be perpendicular (at 90°) to the base. It is usually not one of the slanted sides. Area units are squared (cm²).",
+					"example": "Base of 8 cm and height of 5 cm",
+					"diagram": { "type": "triangle-height", "b": "8 cm", "h": "5 cm" },
+					"steps": [
+						{
+							"title": "Find the base and height",
+							"text": "Pick a side as the base. The height is the perpendicular distance from that base to the opposite corner (the dashed line).",
+							"work": ["b = 8 cm,  h = 5 cm"]
+						},
+						{
+							"title": "Substitute into the formula",
+							"text": "Replace b and h with their values.",
+							"work": ["A = ½ · 8 · 5"]
+						},
+						{
+							"title": "Multiply",
+							"text": "Multiply base times height, then take half. Because we multiplied cm by cm, the answer is in square centimeters.",
+							"work": ["A = ½ · 40", "A = 20 cm²"]
+						}
+					]
+				},
+				{
+					"id": "circle-area-circumference",
+					"name": "Circle Area and Circumference",
+					"formula": "A = πr²,   C = 2πr",
+					"summary": "Area is the space inside a circle; circumference is the distance around it. Both depend only on the radius, r.",
+					"whenToUse": "Any problem with circles: pizza sizes, wheels, round tables, or the curved part of cylinders and cones.",
+					"watchOut": "Use the radius, not the diameter. If you are given the diameter, divide it by 2 first. Only r is squared, not π.",
+					"example": "A circle with a diameter of 10",
+					"diagram": { "type": "circle", "r": "r = 5", "d": "d = 10" },
+					"steps": [
+						{
+							"title": "Find the radius",
+							"text": "The radius is half the diameter. This is the step people most often skip.",
+							"work": ["d = 10", "r = d ÷ 2 = 5"]
+						},
+						{
+							"title": "Find the area",
+							"text": "Square the radius, then multiply by π. Leaving the answer as 25π is exact; 78.54 is a rounded decimal.",
+							"work": ["A = π(5)²", "A = 25π ≈ 78.54"]
+						},
+						{
+							"title": "Find the circumference",
+							"text": "Multiply 2 by π by the radius. (This is the same as π times the diameter.)",
+							"work": ["C = 2π(5)", "C = 10π ≈ 31.42"]
+						},
+						{
+							"title": "Label your units",
+							"text": "Area is measured in square units; circumference is a length, so it uses plain units.",
+							"work": ["A ≈ 78.54 units²", "C ≈ 31.42 units"]
+						}
+					]
+				},
+				{
+					"id": "cylinder-volume",
+					"name": "Volume of a Cylinder",
+					"formula": "V = πr²h",
+					"summary": "Volume is the area of the circular base stacked up through the height of the cylinder.",
+					"whenToUse": "Finding how much a can, pipe, tank, or glass holds.",
+					"watchOut": "Find the base area (πr²) before multiplying by the height. Volume units are cubed (cm³).",
+					"example": "Radius of 3 cm and height of 10 cm",
+					"diagram": { "type": "cylinder", "r": "r = 3", "h": "h = 10" },
+					"steps": [
+						{
+							"title": "Identify the radius and height",
+							"text": "The radius goes from the center of the circular base to its edge. The height runs between the two bases.",
+							"work": ["r = 3 cm,  h = 10 cm"]
+						},
+						{
+							"title": "Find the area of the base",
+							"text": "The base is a circle, so its area is πr².",
+							"work": ["B = π(3)² = 9π"]
+						},
+						{
+							"title": "Multiply by the height",
+							"text": "Stack that base area up 10 cm high.",
+							"work": ["V = 9π · 10 = 90π"]
+						},
+						{
+							"title": "Approximate and label",
+							"text": "Multiply by π ≈ 3.14159 for a decimal answer. Three lengths multiplied together give cubic units.",
+							"work": ["V ≈ 282.74 cm³"]
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "calculus",
+			"name": "Calculus",
+			"page": "calculus.html",
+			"icon": "fa-chart-line",
+			"tagline": "Study change and area",
+			"description": "Calculus describes how things change. Learn to evaluate limits, take derivatives with the power and chain rules, and find the area under a curve with a definite integral.",
+			"image": "https://images.unsplash.com/photo-1754304342349-ac409efb67c7?auto=format&fit=crop&w=800&h=500&q=80",
+			"imageAlt": "A printed graph of a function with labeled axes",
+			"formulas": [
+				{
+					"id": "limits",
+					"name": "Evaluating Limits",
+					"formula": "lim (x→a) f(x)",
+					"summary": "A limit asks what value f(x) approaches as x gets closer and closer to a, even if f(a) itself is undefined.",
+					"whenToUse": "When direct substitution gives 0/0, and as the foundation for derivatives.",
+					"watchOut": "0/0 is not an answer. It means \"simplify and try again\". Factor, cancel, then substitute.",
+					"example": "Find lim (x→2) (x² − 4) ÷ (x − 2)",
+					"diagram": {
+						"type": "graph",
+						"fn": "x + 2",
+						"x": [-1, 4],
+						"y": [-1, 7],
+						"hole": [2, 4]
+					},
+					"steps": [
+						{
+							"title": "Try direct substitution",
+							"text": "Always try plugging in first. Here we get 0/0, which is called indeterminate. It tells us to simplify.",
+							"work": ["(2² − 4) ÷ (2 − 2) = 0/0"]
+						},
+						{
+							"title": "Factor the numerator",
+							"text": "x² − 4 is a difference of squares, which factors into (x − 2)(x + 2).",
+							"work": ["x² − 4 = (x − 2)(x + 2)"]
+						},
+						{
+							"title": "Cancel the common factor",
+							"text": "The (x − 2) on top and bottom cancel. This is allowed because a limit never actually uses x = 2.",
+							"work": ["(x − 2)(x + 2) ÷ (x − 2) = x + 2"]
+						},
+						{
+							"title": "Substitute again",
+							"text": "Now direct substitution works. The graph is the line y = x + 2 with a hole at x = 2, and the limit is the height of that hole.",
+							"work": ["lim (x→2) (x + 2) = 2 + 2 = 4"]
+						}
+					]
+				},
+				{
+					"id": "power-rule",
+					"name": "The Power Rule",
+					"formula": "d/dx [xⁿ] = n · xⁿ⁻¹",
+					"summary": "To differentiate x to a power, bring the exponent down in front and subtract one from the exponent.",
+					"whenToUse": "Taking the derivative of any polynomial, and most terms with x raised to a number.",
+					"watchOut": "The derivative of a constant is 0, not the constant. Multiply the coefficient by the old exponent before lowering the exponent.",
+					"example": "Differentiate f(x) = 3x⁴ − 5x² + 7",
+					"steps": [
+						{
+							"title": "Split into terms",
+							"text": "Derivatives can be taken one term at a time, keeping the plus and minus signs between them.",
+							"work": ["f(x) = 3x⁴ − 5x² + 7"]
+						},
+						{
+							"title": "Differentiate 3x⁴",
+							"text": "Bring the 4 down and multiply it by 3, then subtract 1 from the exponent.",
+							"work": ["3 · 4x³ = 12x³"]
+						},
+						{
+							"title": "Differentiate −5x²",
+							"text": "Bring the 2 down and multiply it by −5. The exponent drops to 1, so we just write x.",
+							"work": ["−5 · 2x¹ = −10x"]
+						},
+						{
+							"title": "Differentiate the constant",
+							"text": "A constant never changes, so its rate of change (its derivative) is zero.",
+							"work": ["d/dx [7] = 0"]
+						},
+						{
+							"title": "Combine the results",
+							"text": "Put the term derivatives back together to get the derivative f′(x).",
+							"work": ["f′(x) = 12x³ − 10x"]
+						}
+					]
+				},
+				{
+					"id": "chain-rule",
+					"name": "The Chain Rule",
+					"formula": "d/dx [f(g(x))] = f′(g(x)) · g′(x)",
+					"summary": "For a function inside another function, take the derivative of the outside, leave the inside alone, then multiply by the derivative of the inside.",
+					"whenToUse": "Whenever something more complicated than plain x is raised to a power or placed inside sin, eˣ, ln, √, and so on.",
+					"watchOut": "The most common mistake is forgetting to multiply by the inside's derivative, g′(x).",
+					"example": "Differentiate y = (3x² + 1)⁵",
+					"steps": [
+						{
+							"title": "Identify outer and inner functions",
+							"text": "Something is raised to the 5th power: that's the outer function. The something, 3x² + 1, is the inner function. Call it u.",
+							"work": ["outer: u⁵", "inner: u = 3x² + 1"]
+						},
+						{
+							"title": "Differentiate the outer function",
+							"text": "Use the power rule on u⁵, treating u as a single block.",
+							"work": ["d/du [u⁵] = 5u⁴"]
+						},
+						{
+							"title": "Differentiate the inner function",
+							"text": "Use the power rule on 3x² + 1.",
+							"work": ["du/dx = 6x"]
+						},
+						{
+							"title": "Multiply and substitute back",
+							"text": "Multiply the two derivatives, and put 3x² + 1 back in place of u.",
+							"work": ["dy/dx = 5(3x² + 1)⁴ · 6x"]
+						},
+						{
+							"title": "Simplify",
+							"text": "Multiply the numbers in front: 5 · 6x = 30x.",
+							"work": ["dy/dx = 30x(3x² + 1)⁴"]
+						}
+					]
+				},
+				{
+					"id": "definite-integral",
+					"name": "Definite Integrals",
+					"formula": "∫ₐᵇ f(x) dx = F(b) − F(a)",
+					"summary": "A definite integral gives the area under a curve between x = a and x = b. Find an antiderivative F, then subtract F(a) from F(b).",
+					"whenToUse": "Finding area under a curve, total distance from a velocity, or any total accumulated over an interval.",
+					"watchOut": "Subtract in the right order: upper limit minus lower limit. To check an antiderivative, take its derivative and see if you get f(x) back.",
+					"example": "Evaluate ∫₀² (3x² + 2x) dx",
+					"diagram": {
+						"type": "graph",
+						"fn": "3*x*x + 2*x",
+						"x": [-0.5, 2.5],
+						"y": [-2, 22],
+						"shade": [0, 2]
+					},
+					"steps": [
+						{
+							"title": "Find the antiderivative",
+							"text": "Reverse the power rule: add 1 to each exponent and divide by the new exponent. 3x² becomes x³ and 2x becomes x².",
+							"work": ["∫(3x² + 2x) dx", "F(x) = x³ + x²"]
+						},
+						{
+							"title": "Evaluate at the upper limit",
+							"text": "Plug the top number, b = 2, into F(x).",
+							"work": ["F(2) = 2³ + 2² = 8 + 4 = 12"]
+						},
+						{
+							"title": "Evaluate at the lower limit",
+							"text": "Plug the bottom number, a = 0, into F(x).",
+							"work": ["F(0) = 0³ + 0² = 0"]
+						},
+						{
+							"title": "Subtract",
+							"text": "Upper minus lower. The shaded area under the curve from 0 to 2 is 12 square units.",
+							"work": ["F(2) − F(0) = 12 − 0 = 12"]
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,17 +1,19 @@
 <!DOCTYPE HTML>
 <!--
-	ZeroFour by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Complex Math | WDD 231 team project by Agustina Echegaray and David Lunceford
+	Layout based on ZeroFour by HTML5 UP (html5up.net | @ajlkn), free under the CCA 3.0 license
 -->
-<html>
+<html lang="en">
 	<head>
-		<title>ZeroFour by HTML5 UP</title>
+		<title>Complex Math | Step-by-Step Math Formulas</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Step-by-step guides to the algebra, geometry, and calculus formulas high school and college students use most." />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/complex-math.css" />
 	</head>
 	<body class="homepage is-preload">
+		<a class="skip-link" href="#main-wrapper">Skip to main content</a>
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -23,32 +25,22 @@
 								<div class="inner">
 
 									<!-- Logo -->
-										<h1><a href="index.html" id="logo">ZeroFour</a></h1>
+										<h1><a href="index.html" id="logo"><span class="icon solid fa-square-root-alt" aria-hidden="true"></span> Complex Math</a></h1>
 
 									<!-- Nav -->
-										<nav id="nav">
+										<nav id="nav" aria-label="Main">
 											<ul>
 												<li class="current_page_item"><a href="index.html">Home</a></li>
 												<li>
-													<a href="#">Dropdown</a>
+													<a href="index.html#topics">Math Topics</a>
 													<ul>
-														<li><a href="#">Lorem ipsum dolor</a></li>
-														<li><a href="#">Magna phasellus</a></li>
-														<li>
-															<a href="#">Phasellus consequat</a>
-															<ul>
-																<li><a href="#">Lorem ipsum dolor</a></li>
-																<li><a href="#">Phasellus consequat</a></li>
-																<li><a href="#">Magna phasellus</a></li>
-																<li><a href="#">Etiam dolore nisl</a></li>
-															</ul>
-														</li>
-														<li><a href="#">Veroeros feugiat</a></li>
+														<li><a href="algebra.html">Algebra</a></li>
+														<li><a href="geometry.html">Geometry</a></li>
+														<li><a href="calculus.html">Calculus</a></li>
 													</ul>
 												</li>
-												<li><a href="left-sidebar.html">Left Sidebar</a></li>
-												<li><a href="right-sidebar.html">Right Sidebar</a></li>
-												<li><a href="no-sidebar.html">No Sidebar</a></li>
+												<li><a href="feedback.html">Feedback</a></li>
+												<li><a href="notes.html">Student Notes</a></li>
 											</ul>
 										</nav>
 
@@ -57,62 +49,104 @@
 
 						<!-- Banner -->
 							<div id="banner">
-								<h2><strong>ZeroFour:</strong> A free responsive site template
+								<h2><strong>Complex Math:</strong> step-by-step guides to the formulas
 								<br />
-								built on HTML5 and CSS3 by <a href="http://html5up.net">HTML5 UP</a></h2>
-								<p>Does this statement make you want to click the big shiny button?</p>
-								<a href="#" class="button large icon solid fa-check-circle">Yes it does</a>
+								you'll use in algebra, geometry, and calculus</h2>
+								<p>Stuck on a formula? Walk through it one step at a time.</p>
+								<a href="#topics" class="button large icon solid fa-play-circle">Start Learning</a>
 							</div>
 
 					</div>
 				</div>
 
 			<!-- Main Wrapper -->
-				<div id="main-wrapper">
+				<main id="main-wrapper" tabindex="-1">
 					<div class="wrapper style1">
 						<div class="inner">
 
-							<!-- Feature 1 -->
-								<section class="container box feature1">
+							<!-- Topics -->
+								<section class="container box feature1" id="topics">
 									<div class="row">
 										<div class="col-12">
 											<header class="first major">
-												<h2>This is an important heading</h2>
-												<p>And this is where we talk about why we’re <strong>pretty awesome</strong> ...</p>
+												<h2>Pick a Topic</h2>
+												<p>This site is here to help you <strong>understand</strong> the math, not just memorize it</p>
 											</header>
 										</div>
+
 										<div class="col-4 col-12-medium">
-											<section>
-												<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-												<header class="second icon solid fa-user">
-													<h3>Here's a Heading</h3>
-													<p>And a subtitle</p>
-												</header>
-											</section>
+											<div class="flip-card reveal" data-topic="algebra">
+												<div class="flip-inner">
+													<section class="flip-face flip-front">
+														<img src="https://images.unsplash.com/photo-1699275303936-302a8d351a80?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" alt="" width="800" height="500" loading="lazy" />
+														<div class="flip-body">
+															<h3 class="icon solid fa-superscript"> Algebra</h3>
+															<p>Solve for the unknown</p>
+															<button type="button" class="button small alt flip-toggle icon solid fa-sync-alt">Preview formulas</button>
+														</div>
+													</section>
+													<section class="flip-face flip-back" aria-label="Algebra formulas">
+														<h3>Algebra</h3>
+														<ul class="formula-links">
+															<li>Loading formulas…</li>
+														</ul>
+														<a href="algebra.html" class="button small">Go to Algebra</a>
+														<button type="button" class="button small alt flip-toggle icon solid fa-undo">Flip back</button>
+													</section>
+												</div>
+											</div>
 										</div>
+
 										<div class="col-4 col-12-medium">
-											<section>
-												<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-												<header class="second icon solid fa-cog">
-													<h3>Also a Heading</h3>
-													<p>And another subtitle</p>
-												</header>
-											</section>
+											<div class="flip-card reveal" data-topic="geometry">
+												<div class="flip-inner">
+													<section class="flip-face flip-front">
+														<img src="https://images.unsplash.com/photo-1764948620396-45f5b5fdd73e?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" alt="" width="800" height="500" loading="lazy" />
+														<div class="flip-body">
+															<h3 class="icon solid fa-shapes"> Geometry</h3>
+															<p>Measure shapes and space</p>
+															<button type="button" class="button small alt flip-toggle icon solid fa-sync-alt">Preview formulas</button>
+														</div>
+													</section>
+													<section class="flip-face flip-back" aria-label="Geometry formulas">
+														<h3>Geometry</h3>
+														<ul class="formula-links">
+															<li>Loading formulas…</li>
+														</ul>
+														<a href="geometry.html" class="button small">Go to Geometry</a>
+														<button type="button" class="button small alt flip-toggle icon solid fa-undo">Flip back</button>
+													</section>
+												</div>
+											</div>
 										</div>
+
 										<div class="col-4 col-12-medium">
-											<section>
-												<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-												<header class="second icon solid fa-chart-bar">
-													<h3>Another Heading</h3>
-													<p>And yes, a subtitle</p>
-												</header>
-											</section>
+											<div class="flip-card reveal" data-topic="calculus">
+												<div class="flip-inner">
+													<section class="flip-face flip-front">
+														<img src="https://images.unsplash.com/photo-1754304342349-ac409efb67c7?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" alt="" width="800" height="500" loading="lazy" />
+														<div class="flip-body">
+															<h3 class="icon solid fa-chart-line"> Calculus</h3>
+															<p>Study change and area</p>
+															<button type="button" class="button small alt flip-toggle icon solid fa-sync-alt">Preview formulas</button>
+														</div>
+													</section>
+													<section class="flip-face flip-back" aria-label="Calculus formulas">
+														<h3>Calculus</h3>
+														<ul class="formula-links">
+															<li>Loading formulas…</li>
+														</ul>
+														<a href="calculus.html" class="button small">Go to Calculus</a>
+														<button type="button" class="button small alt flip-toggle icon solid fa-undo">Flip back</button>
+													</section>
+												</div>
+											</div>
 										</div>
 										<div class="col-12">
-											<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper
-											bibendum ipsum, et tristique augue fringilla eu. Vivamus id risus vel dolor auctor euismod
-											quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus mattis lectus sit
-											amet pulvinar. Nam nec turpis.</p>
+											<p class="intro-text">Every formula on Complex Math comes with a worked example that you can click
+											through one step at a time, a picture of the work for every step, a plain-English explanation of
+											what changed, and a warning about the mistake students make most often. Flip a card to preview
+											what each topic covers.</p>
 										</div>
 									</div>
 								</section>
@@ -122,43 +156,54 @@
 					<div class="wrapper style2">
 						<div class="inner">
 
-							<!-- Feature 2 -->
+							<!-- How it works -->
 								<section class="container box feature2">
 									<div class="row">
-										<div class="col-6 col-12-medium">
-											<section>
+										<div class="col-4 col-12-medium">
+											<section class="reveal">
 												<header class="major">
-													<h2>And this is a subheading</h2>
-													<p>It’s important but clearly not *that* important</p>
+													<h2>One Step at a Time</h2>
+													<p>Slides for every formula</p>
 												</header>
-												<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-												Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-												Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-												consequat etiam.</p>
+												<p>Use the Next and Back buttons (or your arrow keys) to move through each worked
+												example. Every slide highlights exactly what changed, so you never wonder where a
+												number came from.</p>
 												<footer>
-													<a href="#" class="button medium icon solid fa-arrow-circle-right">Let's do this</a>
+													<a href="algebra.html?formula=quadratic-formula&amp;step=1" class="button medium icon solid fa-arrow-circle-right">Try the Quadratic Formula</a>
 												</footer>
 											</section>
 										</div>
-										<div class="col-6 col-12-medium">
-											<section>
+										<div class="col-4 col-12-medium">
+											<section class="reveal">
 												<header class="major">
-													<h2>This is also a subheading</h2>
-													<p>And is as unimportant as the other one</p>
+													<h2>Keep Your Notes</h2>
+													<p>Saved right in your browser</p>
 												</header>
-												<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-												Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-												Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-												consequat etiam.</p>
+												<p>Write a note under any formula and press Save. Your notes stay put after you close
+												the tab, and you can review them all on one page before a test.
+												<strong id="note-count"></strong></p>
 												<footer>
-													<a href="#" class="button medium alt icon solid fa-info-circle">Wait, what?</a>
+													<a href="notes.html" class="button medium alt icon solid fa-sticky-note">My Notes</a>
+												</footer>
+											</section>
+										</div>
+										<div class="col-4 col-12-medium">
+											<section class="reveal">
+												<header class="major">
+													<h2>Ask Us Anything</h2>
+													<p>We read every message</p>
+												</header>
+												<p>Still confused, found a mistake, or want a formula we haven't covered yet? Send
+												us feedback and we'll use it to make the explanations clearer.</p>
+												<footer>
+													<a href="feedback.html" class="button medium alt icon solid fa-paper-plane">Send Feedback</a>
 												</footer>
 											</section>
 										</div>
 									</div>
 								</section>
 
-							</div>
+						</div>
 					</div>
 					<div class="wrapper style3">
 						<div class="inner">
@@ -166,49 +211,43 @@
 								<div class="row">
 									<div class="col-8 col-12-medium">
 
-										<!-- Article list -->
+										<!-- Sticking points -->
 											<section class="box article-list">
-												<h2 class="icon fa-file-alt">Recent Posts</h2>
+												<h2 class="icon solid fa-exclamation-triangle">Where Students Get Stuck</h2>
 
 												<!-- Excerpt -->
-													<article class="box excerpt">
-														<a href="#" class="image left"><img src="images/pic04.jpg" alt="" /></a>
+													<article class="box excerpt reveal">
+														<a href="algebra.html?formula=quadratic-formula" class="image left" tabindex="-1" aria-hidden="true"><img src="images/steps/quadratic-formula-2.svg" alt="" /></a>
 														<div>
 															<header>
-																<span class="date">July 24</span>
-																<h3><a href="#">Repairing a hyperspace window</a></h3>
+																<span class="date">Algebra</span>
+																<h3><a href="algebra.html?formula=quadratic-formula">Losing a negative sign in the quadratic formula</a></h3>
 															</header>
-															<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus
-															semper mod quisturpis nisi consequat etiam lorem. Phasellus quam turpis,
-															feugiat et sit amet ornare in, hendrerit in lectus semper mod quis eget mi dolore.</p>
+															<p>When c is negative, −4ac becomes positive. Students who drop that sign get the wrong discriminant, and then both answers are wrong. Our example walks through the signs one at a time.</p>
 														</div>
 													</article>
 
 												<!-- Excerpt -->
-													<article class="box excerpt">
-														<a href="#" class="image left"><img src="images/pic05.jpg" alt="" /></a>
+													<article class="box excerpt reveal">
+														<a href="geometry.html?formula=circle-area-circumference" class="image left" tabindex="-1" aria-hidden="true"><img src="images/steps/circle-area-circumference-1.svg" alt="" /></a>
 														<div>
 															<header>
-																<span class="date">July 18</span>
-																<h3><a href="#">Adventuring with a knee injury</a></h3>
+																<span class="date">Geometry</span>
+																<h3><a href="geometry.html?formula=circle-area-circumference">Using the diameter instead of the radius</a></h3>
 															</header>
-															<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus
-															semper mod quisturpis nisi consequat etiam lorem. Phasellus quam turpis,
-															feugiat et sit amet ornare in, hendrerit in lectus semper mod quis eget mi dolore.</p>
+															<p>Circle formulas use the radius, r. If a problem gives you the diameter, cut it in half first. It is the single most common mistake on circle problems.</p>
 														</div>
 													</article>
 
 												<!-- Excerpt -->
-													<article class="box excerpt">
-														<a href="#" class="image left"><img src="images/pic06.jpg" alt="" /></a>
+													<article class="box excerpt reveal">
+														<a href="calculus.html?formula=limits" class="image left" tabindex="-1" aria-hidden="true"><img src="images/steps/limits-1.svg" alt="" /></a>
 														<div>
 															<header>
-																<span class="date">July 14</span>
-																<h3><a href="#">Preparing for Y2K38</a></h3>
+																<span class="date">Calculus</span>
+																<h3><a href="calculus.html?formula=limits">Thinking 0/0 is the final answer</a></h3>
 															</header>
-															<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus
-															semper mod quisturpis nisi consequat etiam lorem. Phasellus quam turpis,
-															feugiat et sit amet ornare in, hendrerit in lectus semper mod quis eget mi dolore.</p>
+															<p>Getting 0/0 from a limit doesn't mean the answer is zero or undefined. It is a signal to simplify. Factor, cancel, and then substitute again.</p>
 														</div>
 													</article>
 
@@ -218,22 +257,12 @@
 
 										<!-- Spotlight -->
 											<section class="box spotlight">
-												<h2 class="icon fa-file-alt">Spotlight</h2>
+												<h2 class="icon solid fa-lightbulb">Formula of the Day</h2>
 												<article>
-													<a href="#" class="image featured"><img src="images/pic07.jpg" alt=""></a>
-													<header>
-														<h3><a href="#">Neural Implants</a></h3>
-														<p>The pros and cons. Mostly cons.</p>
-													</header>
-													<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus semper mod
-													quisturpis nisi consequat ornare in, hendrerit in lectus semper mod quis eget mi quat etiam
-													lorem. Phasellus quam turpis, feugiat sed et lorem ipsum dolor consequat dolor feugiat sed
-													et tempus consequat etiam.</p>
-													<p>Lorem ipsum dolor quam turpis, feugiat sit amet ornare in, hendrerit in lectus semper
-													mod quisturpis nisi consequat etiam lorem sed amet quam turpis.</p>
-													<footer>
-														<a href="#" class="button alt icon solid fa-file-alt">Continue Reading</a>
-													</footer>
+													<span class="image featured"><img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" alt="Famous equations written in chalk on a green chalkboard" width="800" height="500" loading="lazy" /></span>
+													<div id="spotlight-content" aria-live="polite">
+														<p>Loading today's formula…</p>
+													</div>
 												</article>
 											</section>
 
@@ -242,7 +271,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</main>
 
 			<!-- Footer Wrapper -->
 				<div id="footer-wrapper">
@@ -252,19 +281,13 @@
 
 								<!-- Links -->
 									<section>
-										<h2>Filler Links</h2>
+										<h2>Math Topics</h2>
 										<ul class="divided">
-											<li><a href="#">Quam turpis feugiat dolor</a></li>
-											<li><a href="#">Amet ornare in hendrerit </a></li>
-											<li><a href="#">Semper mod quisturpis nisi</a></li>
-											<li><a href="#">Consequat etiam phasellus</a></li>
-											<li><a href="#">Amet turpis, feugiat et</a></li>
-											<li><a href="#">Ornare hendrerit lectus</a></li>
-											<li><a href="#">Semper mod quis et dolore</a></li>
-											<li><a href="#">Amet ornare in hendrerit</a></li>
-											<li><a href="#">Consequat lorem phasellus</a></li>
-											<li><a href="#">Amet turpis, feugiat amet</a></li>
-											<li><a href="#">Semper mod quisturpis</a></li>
+											<li><a href="algebra.html">Algebra</a></li>
+											<li><a href="geometry.html">Geometry</a></li>
+											<li><a href="calculus.html">Calculus</a></li>
+											<li><a href="notes.html">Student Notes</a></li>
+											<li><a href="feedback.html">Feedback</a></li>
 										</ul>
 									</section>
 
@@ -273,78 +296,45 @@
 
 								<!-- Links -->
 									<section>
-										<h2>More Filler</h2>
+										<h2>Popular Formulas</h2>
 										<ul class="divided">
-											<li><a href="#">Quam turpis feugiat dolor</a></li>
-											<li><a href="#">Amet ornare in in lectus</a></li>
-											<li><a href="#">Semper mod sed tempus nisi</a></li>
-											<li><a href="#">Consequat etiam phasellus</a></li>
-										</ul>
-									</section>
-
-								<!-- Links -->
-									<section>
-										<h2>Even More Filler</h2>
-										<ul class="divided">
-											<li><a href="#">Quam turpis feugiat dolor</a></li>
-											<li><a href="#">Amet ornare hendrerit lectus</a></li>
-											<li><a href="#">Semper quisturpis nisi</a></li>
-											<li><a href="#">Consequat lorem phasellus</a></li>
+											<li><a href="algebra.html?formula=quadratic-formula">Quadratic Formula</a></li>
+											<li><a href="algebra.html?formula=slope-intercept">Slope of a Line</a></li>
+											<li><a href="geometry.html?formula=pythagorean-theorem">Pythagorean Theorem</a></li>
+											<li><a href="geometry.html?formula=circle-area-circumference">Circle Area</a></li>
+											<li><a href="calculus.html?formula=power-rule">Power Rule</a></li>
+											<li><a href="calculus.html?formula=chain-rule">Chain Rule</a></li>
 										</ul>
 									</section>
 
 							</div>
-							<div class="col-6 col-12-medium imp-medium">
+							<div class="col-6 col-12-medium">
 
 								<!-- About -->
 									<section>
-										<h2><strong>ZeroFour</strong> by HTML5 UP</h2>
-										<p>Hi! This is <strong>ZeroFour</strong>, a free, fully responsive HTML5 site
-										template by <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a>.
-										It's <a href="http://html5up.net/license/">Creative Commons Attribution</a>
-										licensed so use it for any personal or commercial project (just credit us
-										for the design!).</p>
-										<a href="#" class="button alt icon solid fa-arrow-circle-right">Learn More</a>
+										<h2>About <strong>Complex Math</strong></h2>
+										<p>Complex Math is a WDD 231 team project by Agustina Echegaray and David Lunceford.
+										We break the formulas high school and college students use most into small, clear
+										steps, so you can see exactly where every number comes from.</p>
+										<a href="feedback.html" class="button alt icon solid fa-paper-plane">Send Feedback</a>
 									</section>
 
 								<!-- Contact -->
 									<section>
 										<h2>Get in touch</h2>
-										<div>
-											<div class="row">
-												<div class="col-6 col-12-small">
-													<dl class="contact">
-														<dt>Twitter</dt>
-														<dd><a href="#">@untitled-corp</a></dd>
-														<dt>Facebook</dt>
-														<dd><a href="#">facebook.com/untitled</a></dd>
-														<dt>WWW</dt>
-														<dd><a href="#">untitled.tld</a></dd>
-														<dt>Email</dt>
-														<dd><a href="#">user@untitled.tld</a></dd>
-													</dl>
-												</div>
-												<div class="col-6 col-12-small">
-													<dl class="contact">
-														<dt>Address</dt>
-														<dd>
-															1234 Fictional Rd<br />
-															Nashville, TN 00000-0000<br />
-															USA
-														</dd>
-														<dt>Phone</dt>
-														<dd>(000) 000-0000</dd>
-													</dl>
-												</div>
-											</div>
-										</div>
+										<dl class="contact">
+											<dt>Email</dt>
+											<dd>complex_math_feedback@proton.me</dd>
+											<dt>Form</dt>
+											<dd><a href="feedback.html">Ask a question or suggest a topic</a></dd>
+										</dl>
 									</section>
 
 							</div>
 							<div class="col-12">
 								<div id="copyright">
 									<ul class="menu">
-										<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										<li>&copy; 2026 Complex Math. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Photos: <a href="https://unsplash.com">Unsplash</a></li>
 									</ul>
 								</div>
 							</div>
@@ -357,10 +347,10 @@
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script type="module" src="assets/js/pages/home.js"></script>
 
 	</body>
 </html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+	<title>Volume of a Cylinder, step 4: Approximate and label</title>
+	<rect width="800" height="450" rx="14" fill="#2b3035"/>
+	<rect x="8" y="8" width="784" height="434" rx="10" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>
+	<rect x="32" y="30" width="134" height="34" rx="17" fill="#ffd866"/>
+	<text x="99" y="53" text-anchor="middle" font-family="'Open Sans', 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="800" fill="#2b3035" letter-spacing="1">STEP 4 / 4</text>
+	<text x="182" y="56" font-family="'Open Sans', 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#f2f4f7">Approximate and label</text>
+	<text x="40" y="104" font-family="'Open Sans', 'Segoe UI', Arial, sans-serif" font-size="18" fill="#9aa3ad">Example: Radius of 3 cm and height of 10 cm</text>
+	<line x1="40" y1="124" x2="760" y2="124" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2" stroke-dasharray="6 6"/>
+	<text x="40" y="186.4" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="31.2" fill="#9aa3ad">r = 3 cm,  h = 10 cm</text>
+	<text x="40" y="238.4" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="31.2" fill="#9aa3ad">B = π(3)² = 9π</text>
+	<text x="40" y="290.4" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="31.2" fill="#9aa3ad">V = 9π · 10 = 90π</text>
+	<text x="40" y="342.4" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="37.44" fill="#ffd866">V ≈ 282.74 cm³</text>
+	<g>
+		<ellipse cx="610" cy="190" rx="80" ry="24" stroke="#f2f4f7" stroke-width="3" fill="none" stroke-linejoin="round"/>
+		<line x1="530" y1="190" x2="530" y2="350" stroke="#f2f4f7" stroke-width="3" fill="none" stroke-linejoin="round"/>
+		<line x1="690" y1="190" x2="690" y2="350" stroke="#f2f4f7" stroke-width="3" fill="none" stroke-linejoin="round"/>
+		<path d="M 530 350 A 80 24 0 0 0 690 350" stroke="#f2f4f7" stroke-width="3" fill="none" stroke-linejoin="round"/>
+		<path d="M 530 350 A 80 24 0 0 1 690 350" stroke="#9aa3ad" stroke-width="2" fill="none" stroke-dasharray="6 6"/>
+		<line x1="610" y1="190" x2="690" y2="190" stroke="#ffd866" stroke-width="3"/>
+		<line x1="708" y1="190" x2="708" y2="350" stroke="#ffd866" stroke-width="2" stroke-dasharray="6 6"/>
+		<text x="650" y="156" text-anchor="middle" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="20" fill="#f2f4f7">r = 3</text>
+		<text x="716" y="270" text-anchor="start" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="20" fill="#f2f4f7">h = 10</text>
+	</g>
+	<text x="768" y="428" text-anchor="end" font-family="'Open Sans', 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#ffffff" fill-opacity="0.25" letter-spacing="2">COMPLEX MATH</text>
+</svg>

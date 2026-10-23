@@ -1,0 +1,1119 @@
+/*
+	Complex Math styles
+	Loaded after main.css (the ZeroFour template). Everything specific to Complex Math lives here:
+	accessibility fixes, formula cards, slideshows, notes, flip cards, the feedback form, and animations.
+*/
+
+/* ---------- Shared values ---------- */
+
+:root {
+	--blue: #4091bf;
+	--blue-dark: #2c6f96;
+	--chalkboard: #2b3035;
+	--chalk-yellow: #ffd866;
+	--ink: #404248;
+	--muted: #6b717c;
+	--line: #dbdbdb;
+	--paper: #f6f7f9;
+	--danger: #c0392b;
+	--success: #2e8b57;
+	--radius: 10px;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+/* Images keep their shape when the width attribute is scaled down by CSS. */
+.image img {
+	height: auto;
+}
+
+.spotlight .image img {
+	aspect-ratio: 8 / 5;
+	object-fit: cover;
+}
+
+/* ---------- Accessibility ---------- */
+
+/* Hidden until a keyboard user tabs to it, then it appears at the top of the page. */
+.skip-link {
+	position: absolute;
+	left: 1em;
+	top: -4em;
+	z-index: 20000;
+	background: var(--chalk-yellow);
+	color: var(--chalkboard);
+	font-weight: 800;
+	padding: 0.5em 1em;
+	border-radius: 0 0 8px 8px;
+	transition: top 0.2s ease;
+}
+
+	.skip-link:focus {
+		top: 0;
+	}
+
+/* The template removes focus outlines; keyboard users need to see where they are. */
+a:focus-visible,
+button:focus-visible,
+.button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+.slideshow:focus-visible,
+[tabindex="-1"]:focus-visible {
+	outline: 3px solid var(--chalk-yellow);
+	outline-offset: 3px;
+}
+
+#main-wrapper:focus {
+	outline: none;
+}
+
+/* Darker grey for better text contrast on white backgrounds. */
+body, input, select, textarea {
+	color: #5f6570;
+}
+
+header p {
+	color: #5a5f69;
+}
+
+/* ---------- Header and banner ---------- */
+
+#logo .icon {
+	color: var(--chalk-yellow);
+	margin-right: 0.15em;
+}
+
+#banner h2 {
+	color: rgba(255, 255, 255, 0.9);
+	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+	animation: rise-in 0.9s ease both;
+}
+
+#banner p {
+	color: rgba(255, 255, 255, 0.9);
+	text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+	animation: rise-in 0.9s 0.2s ease both;
+}
+
+#banner .button {
+	animation: rise-in 0.9s 0.4s ease both, pulse 2.5s 1.5s ease-in-out 2;
+}
+
+/* ---------- Buttons ---------- */
+
+.button,
+button {
+	transition: background-color 0.2s ease-in-out, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+	.button:hover,
+	button:hover {
+		transform: translateY(-2px);
+	}
+
+	.button:active,
+	button:active {
+		transform: translateY(0);
+	}
+
+	.button.small,
+	button.small {
+		font-size: 0.8em;
+		padding: 0.7em 1.4em;
+	}
+
+	.button.danger,
+	button.danger {
+		background-color: var(--danger);
+	}
+
+	.button:disabled,
+	button:disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
+		transform: none;
+	}
+
+/* Lets buttons wrap on narrow phones instead of overflowing. */
+@media screen and (max-width: 736px) {
+	.button {
+		white-space: normal;
+	}
+}
+
+/* ---------- Loading and messages ---------- */
+
+.loader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	padding: 3em 0;
+	font-weight: 700;
+	color: var(--muted);
+}
+
+.spinner {
+	width: 2.25em;
+	height: 2.25em;
+	border-radius: 50%;
+	border: 4px solid var(--line);
+	border-top-color: var(--blue);
+	animation: spin 0.8s linear infinite;
+}
+
+.message.error {
+	border-left: 5px solid var(--danger);
+	background: #fdf0ee;
+	padding: 1em 1.5em;
+	border-radius: var(--radius);
+	color: var(--ink);
+}
+
+/* ---------- Scroll-in animation ---------- */
+
+/* Elements start hidden only when JavaScript is running (it adds .js-reveal to <html>). */
+.js-reveal .reveal {
+	opacity: 0;
+}
+
+	.js-reveal .reveal.is-visible {
+		animation: rise-in 0.7s var(--delay, 0ms) ease both;
+	}
+
+/* ---------- Home page: flip cards ---------- */
+
+.intro-text {
+	max-width: 52em;
+	margin: 2em auto 0 auto;
+}
+
+.flip-card {
+	perspective: 1200px;
+	margin-bottom: 2em;
+	text-shadow: none;
+}
+
+	.flip-inner {
+		display: grid;
+		transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+		transform-style: preserve-3d;
+	}
+
+	.flip-card.is-flipped .flip-inner {
+		transform: rotateY(180deg);
+	}
+
+	/* Both faces sit in the same grid cell, so the card is as tall as the taller face. */
+	.flip-face {
+		grid-area: 1 / 1;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		background: #fff;
+		border-radius: var(--radius);
+		box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+		overflow: hidden;
+		margin: 0;
+	}
+
+	.flip-front img {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 8 / 5;
+		object-fit: cover;
+	}
+
+	.flip-body {
+		padding: 1.5em;
+	}
+
+		.flip-body h3 {
+			margin-bottom: 0.25em;
+			font-size: 1.4em;
+		}
+
+		.flip-body h3:before {
+			color: var(--blue);
+			margin-right: 0.35em;
+		}
+
+	.flip-back {
+		transform: rotateY(180deg);
+		background: var(--chalkboard);
+		color: #dfe3e8;
+		padding: 2em 1.5em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.75em;
+	}
+
+		.flip-back h3 {
+			color: var(--chalk-yellow);
+			margin: 0;
+		}
+
+		.flip-back .formula-links {
+			list-style: none;
+			padding: 0;
+			margin: 0 0 0.5em 0;
+			flex: 1;
+		}
+
+			.flip-back .formula-links li {
+				border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+				padding: 0.35em 0;
+			}
+
+			.flip-back .formula-links a {
+				color: #fff;
+				text-decoration: none;
+			}
+
+				.flip-back .formula-links a:hover {
+					color: var(--chalk-yellow);
+					text-decoration: underline;
+				}
+
+/* ---------- Home page: sticking points and spotlight ---------- */
+
+.box.excerpt .image.left {
+	width: 40%;
+	max-width: 260px;
+}
+
+	.box.excerpt .image:before {
+		display: none;
+	}
+
+.spotlight .formula-display,
+.formula-display {
+	font-family: 'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive;
+	background: var(--chalkboard);
+	color: var(--chalk-yellow);
+	text-shadow: none;
+	border-radius: var(--radius);
+	padding: 0.6em 1em;
+	font-size: 1.25em;
+	line-height: 1.6;
+	text-align: center;
+	overflow-x: auto;
+}
+
+/* ---------- Topic pages: sidebar ---------- */
+
+@media screen and (min-width: 981px) {
+	/* The formula list follows the reader down the page. */
+	#sidebar .sidebar-formulas {
+		position: sticky;
+		top: 1.5em;
+	}
+}
+
+.formula-nav {
+	counter-reset: formula;
+	list-style: none;
+	padding: 0;
+}
+
+	.formula-nav li {
+		counter-increment: formula;
+		border-top: 1px solid var(--line);
+	}
+
+		.formula-nav li:first-child {
+			border-top: 0;
+		}
+
+	.formula-nav a {
+		display: flex;
+		gap: 0.75em;
+		padding: 0.6em 0;
+		text-decoration: none;
+		color: var(--ink);
+		font-weight: 700;
+		transition: color 0.2s ease, padding-left 0.2s ease;
+	}
+
+		.formula-nav a:before {
+			content: counter(formula);
+			flex: 0 0 1.8em;
+			height: 1.8em;
+			line-height: 1.8em;
+			text-align: center;
+			border-radius: 50%;
+			background: var(--paper);
+			color: var(--blue);
+			font-weight: 800;
+		}
+
+		.formula-nav a:hover {
+			color: var(--blue);
+			padding-left: 0.35em;
+		}
+
+/* ---------- Topic pages: content ---------- */
+
+.page-banner img {
+	aspect-ratio: 8 / 3;
+	object-fit: cover;
+	animation: fade-in 1s ease both;
+}
+
+.how-to {
+	background: var(--paper);
+	border-left: 4px solid var(--blue);
+	padding: 1em 1.25em;
+	border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.formula-list {
+	margin-top: 4em;
+}
+
+.formula-card {
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	padding: 2em;
+	margin-bottom: 3em;
+	background: #fff;
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+	scroll-margin-top: 1.5em;
+}
+
+	.formula-header {
+		position: relative;
+		padding-left: 3.5em;
+		margin-bottom: 1.5em;
+	}
+
+		.formula-number {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 2.4em;
+			height: 2.4em;
+			line-height: 2.4em;
+			text-align: center;
+			border-radius: 50%;
+			background: var(--blue);
+			color: #fff;
+			font-weight: 800;
+		}
+
+		.formula-header h3 {
+			font-size: 1.4em;
+			margin-bottom: 0.75em;
+		}
+
+		.formula-header .formula-display {
+			text-transform: none;
+			letter-spacing: 0;
+			margin: 0 0 1em 0;
+			top: 0;
+			font-weight: 400;
+		}
+
+		.formula-header .formula-summary {
+			text-transform: none;
+			letter-spacing: 0;
+			font-weight: 400;
+			font-size: 1em;
+			color: #5f6570;
+		}
+
+	.formula-facts {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1em;
+		margin-bottom: 2em;
+	}
+
+		.fact {
+			background: var(--paper);
+			border-radius: var(--radius);
+			padding: 1em 1.25em;
+		}
+
+			.fact h4 {
+				font-size: 0.85em;
+				margin-bottom: 0.5em;
+				color: var(--blue-dark);
+			}
+
+				.fact h4:before {
+					margin-right: 0.5em;
+				}
+
+			.fact p {
+				margin: 0;
+			}
+
+		.fact.watch-out {
+			background: #fff8e1;
+		}
+
+			.fact.watch-out h4 {
+				color: #a35f00;
+			}
+
+	.example-label {
+		font-size: 0.9em;
+		color: var(--muted);
+	}
+
+	.formula-help {
+		margin: 1.5em 0 0 0;
+		font-size: 0.95em;
+	}
+
+		.formula-help a:before {
+			margin-right: 0.4em;
+			color: var(--blue);
+		}
+
+/* ---------- Slideshow ---------- */
+
+.slideshow {
+	background: var(--chalkboard);
+	border-radius: 14px;
+	padding: 1em;
+	overflow: hidden;
+	margin-bottom: 1.5em;
+}
+
+	.slide-progress {
+		height: 6px;
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 3px;
+		overflow: hidden;
+		margin-bottom: 1em;
+	}
+
+		.slide-progress span {
+			display: block;
+			height: 100%;
+			width: 0;
+			background: var(--chalk-yellow);
+			transition: width 0.4s ease;
+		}
+
+	.slide {
+		margin: 0;
+	}
+
+		.slide img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border-radius: var(--radius);
+		}
+
+		.slide figcaption {
+			color: #dfe3e8;
+			padding: 1em 0.25em 0 0.25em;
+			min-height: 7em;
+		}
+
+			.slide figcaption h4 {
+				color: var(--chalk-yellow);
+				margin: 0 0 0.4em 0;
+				font-size: 1em;
+			}
+
+			.slide figcaption p {
+				margin: 0;
+			}
+
+		.slide.slide-from-right {
+			animation: slide-from-right 0.45s ease both;
+		}
+
+		.slide.slide-from-left {
+			animation: slide-from-left 0.45s ease both;
+		}
+
+	.slide-controls {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1em;
+		margin-top: 1em;
+	}
+
+		.slide-counter {
+			margin: 0;
+			color: #dfe3e8;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+			font-size: 0.85em;
+		}
+
+	.slide-dots {
+		display: flex;
+		justify-content: center;
+		gap: 0.6em;
+		list-style: none;
+		padding: 0;
+		margin: 1em 0 0 0;
+	}
+
+		.slide-dots button {
+			width: 14px;
+			height: 14px;
+			padding: 0;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.25);
+			background-image: none;
+			box-shadow: none;
+			transition: background-color 0.2s ease, transform 0.2s ease;
+		}
+
+			.slide-dots button:hover {
+				background-color: rgba(255, 255, 255, 0.55);
+				transform: scale(1.2);
+			}
+
+			.slide-dots button[aria-current] {
+				background-color: var(--chalk-yellow);
+				transform: scale(1.3);
+			}
+
+/* ---------- Note editor ---------- */
+
+.note-editor {
+	border: 1px dashed var(--line);
+	border-radius: var(--radius);
+	padding: 0.75em 1.25em;
+}
+
+	.note-editor summary {
+		cursor: pointer;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		font-size: 0.9em;
+		color: var(--ink);
+	}
+
+		.note-editor summary .icon {
+			color: var(--blue);
+			margin-right: 0.3em;
+		}
+
+	.note-editor[open] form {
+		animation: rise-in 0.35s ease both;
+	}
+
+	.note-editor form {
+		margin-top: 1em;
+	}
+
+		.note-editor label {
+			text-transform: none;
+			letter-spacing: 0;
+			font-weight: 600;
+			font-size: 0.9em;
+			color: var(--muted);
+			margin-bottom: 0.5em;
+		}
+
+	.note-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1em;
+		margin-top: 1em;
+	}
+
+		.note-actions a {
+			margin-left: auto;
+			font-size: 0.9em;
+		}
+
+	.note-status {
+		font-weight: 700;
+	}
+
+		.note-status.is-saved {
+			color: var(--success);
+			animation: pop-in 0.4s ease both;
+		}
+
+			.note-status.is-saved:before {
+				content: '\2714';
+				display: inline-block;
+				margin-right: 0.35em;
+				animation: check-bounce 0.5s ease both;
+			}
+
+		.note-status.is-error {
+			color: var(--danger);
+		}
+
+/* ---------- Notes page ---------- */
+
+.note-filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0 0 2em 0;
+}
+
+	.note-filters a {
+		display: inline-block;
+		padding: 0.4em 1.1em;
+		border-radius: 999px;
+		border: 1px solid var(--line);
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 0.9em;
+		transition: background-color 0.2s ease, color 0.2s ease;
+	}
+
+		.note-filters a:hover {
+			border-color: var(--blue);
+			color: var(--blue);
+		}
+
+		.note-filters a.active {
+			background: var(--blue);
+			border-color: var(--blue);
+			color: #fff;
+		}
+
+.notes-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+	gap: 1.5em;
+}
+
+	.note-card {
+		background: #fffdf3;
+		border: 1px solid #efe6c0;
+		border-radius: var(--radius);
+		padding: 1.5em;
+		margin: 0;
+		box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+		display: flex;
+		flex-direction: column;
+	}
+
+		.note-card header {
+			margin-bottom: 1em;
+		}
+
+		.note-card h3 {
+			font-size: 1.1em;
+		}
+
+		.note-card .note-text {
+			white-space: pre-wrap;
+			flex: 1;
+		}
+
+		.note-card footer {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5em;
+			margin-top: 1em;
+		}
+
+		.note-card.is-removing {
+			animation: shrink-out 0.35s ease both;
+		}
+
+.empty-notes {
+	grid-column: 1 / -1;
+	text-align: center;
+	padding: 2em 1em;
+	background: var(--paper);
+	border-radius: var(--radius);
+}
+
+	.empty-notes .icon {
+		font-size: 3em;
+		color: var(--blue);
+		margin-bottom: 0.25em;
+	}
+
+.clear-area {
+	margin-top: 2.5em;
+	border-top: 1px solid var(--line);
+	padding-top: 1.5em;
+}
+
+	.clear-confirm {
+		margin-top: 1em;
+		animation: rise-in 0.3s ease both;
+	}
+
+		.clear-confirm p {
+			font-weight: 700;
+			color: var(--danger);
+			margin-bottom: 0.5em;
+		}
+
+/* ---------- Feedback form ---------- */
+
+.feedback-form {
+	margin-top: 2em;
+}
+
+	.feedback-form .field {
+		margin-bottom: 0.5em;
+	}
+
+	.feedback-form input[type="text"],
+	.feedback-form input[type="email"],
+	.feedback-form select,
+	.feedback-form textarea {
+		border: solid 1px #c9ccd1;
+		background: #fff;
+		color: var(--ink);
+		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	/* Shows a small arrow on drop-downs (the template hides the browser's own). */
+	.feedback-form select {
+		background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+		background-position: calc(100% - 1.25em) 50%, calc(100% - 0.9em) 50%;
+		background-size: 0.35em 0.35em;
+		background-repeat: no-repeat;
+		padding-right: 2.5em;
+	}
+
+		.feedback-form select:disabled {
+			background-color: var(--paper);
+			color: var(--muted);
+		}
+
+	.feedback-form .required {
+		color: var(--danger);
+	}
+
+	.feedback-form fieldset {
+		border: 0;
+		padding: 0;
+		margin: 0;
+	}
+
+	.feedback-form legend {
+		text-transform: uppercase;
+		font-weight: 800;
+		letter-spacing: 0.04em;
+		color: var(--ink);
+		font-size: 0.8em;
+		margin-bottom: 0.75em;
+	}
+
+	.feedback-form .hint {
+		margin: -0.5em 0 0.75em 0;
+		font-size: 0.85em;
+		color: var(--muted);
+	}
+
+	/* Radio buttons and checkboxes styled as clickable pills. */
+	.feedback-form .choice {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5em;
+		margin: 0 0.5em 0.5em 0;
+		padding: 0.4em 1em;
+		border: 1px solid #c9ccd1;
+		border-radius: 999px;
+		cursor: pointer;
+		text-transform: none;
+		letter-spacing: 0;
+		font-weight: 600;
+		font-size: 0.95em;
+		color: var(--ink);
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+	}
+
+		.feedback-form .choice:hover {
+			border-color: var(--blue);
+		}
+
+		.feedback-form .choice:has(input:checked) {
+			border-color: var(--blue);
+			background: #e8f3fa;
+		}
+
+		.feedback-form .choice:has(input:focus-visible) {
+			outline: 3px solid var(--chalk-yellow);
+			outline-offset: 2px;
+		}
+
+		.feedback-form .choice input {
+			accent-color: var(--blue);
+			margin: 0;
+		}
+
+		.feedback-form .choice .icon:before {
+			color: var(--blue);
+			margin-right: 0.3em;
+		}
+
+		.feedback-form .choice.checkbox {
+			border: 0;
+			padding-left: 0;
+		}
+
+	.feedback-form .rating .choice {
+		min-width: 3.5em;
+		justify-content: center;
+	}
+
+	.feedback-form .botcheck {
+		display: none;
+	}
+
+	/* Error state */
+	.field-error {
+		min-height: 1.5em;
+		margin: 0.25em 0 0 0;
+		font-size: 0.85em;
+		font-weight: 700;
+		color: var(--danger);
+	}
+
+	.field.has-error input,
+	.field.has-error select,
+	.field.has-error textarea {
+		border-color: var(--danger);
+		animation: shake 0.35s ease;
+	}
+
+	.field.has-error .choice {
+		border-color: var(--danger);
+	}
+
+	.char-count {
+		margin: 0.25em 0 0 0;
+		font-size: 0.8em;
+		text-align: right;
+		color: var(--muted);
+	}
+
+		.char-count.is-near-limit {
+			color: var(--danger);
+			font-weight: 700;
+		}
+
+	.form-status {
+		margin: 1em 0 0 0;
+		font-weight: 700;
+	}
+
+		.form-status.error {
+			color: var(--danger);
+		}
+
+	/* Spinner inside the submit button while the form is sending. */
+	.button.is-loading {
+		color: transparent !important;
+		text-shadow: none;
+		pointer-events: none;
+	}
+
+		.button.is-loading:before {
+			opacity: 0;
+		}
+
+		.button.is-loading:after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 1.2em;
+			height: 1.2em;
+			margin: -0.6em 0 0 -0.6em;
+			border-radius: 50%;
+			border: 3px solid rgba(255, 255, 255, 0.35);
+			border-top-color: #fff;
+			animation: spin 0.8s linear infinite;
+		}
+
+/* ---------- Thank-you page ---------- */
+
+.thanks {
+	text-align: center;
+	padding: 2em 0;
+}
+
+	.thanks h2 {
+		font-size: 2em;
+		animation: rise-in 0.6s 0.9s ease both;
+	}
+
+	.thanks p {
+		animation: rise-in 0.6s 1.1s ease both;
+	}
+
+	.thanks-actions .button {
+		margin: 0.25em;
+	}
+
+/* The checkmark draws itself: the circle first, then the tick. */
+.checkmark {
+	width: 110px;
+	height: 110px;
+	margin: 0 auto 1.5em auto;
+	display: block;
+}
+
+	.checkmark-circle {
+		fill: none;
+		stroke: var(--success);
+		stroke-width: 3;
+		stroke-dasharray: 151;
+		stroke-dashoffset: 151;
+		animation: draw 0.6s ease forwards;
+	}
+
+	.checkmark-check {
+		fill: none;
+		stroke: var(--success);
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-dasharray: 36;
+		stroke-dashoffset: 36;
+		animation: draw 0.4s 0.6s ease forwards;
+	}
+
+/* ---------- Footer ---------- */
+
+#footer,
+#footer p {
+	color: #a7adb8;
+}
+
+#footer dl.contact dd {
+	overflow-wrap: anywhere;
+}
+
+/* ---------- Responsive ---------- */
+
+@media screen and (max-width: 736px) {
+	.formula-card {
+		padding: 1.25em;
+	}
+
+	.formula-header {
+		padding-left: 0;
+	}
+
+		.formula-number {
+			position: static;
+			display: inline-block;
+			margin-bottom: 0.5em;
+		}
+
+	.formula-facts {
+		grid-template-columns: 1fr;
+	}
+
+	.formula-display {
+		font-size: 1em;
+	}
+
+	.slideshow {
+		padding: 0.6em;
+	}
+
+	.slide-controls .button {
+		padding: 0.8em 1.1em;
+		font-size: 0.8em;
+	}
+
+	.box.excerpt .image.left {
+		float: none;
+		width: 100%;
+		max-width: none;
+		margin: 0 0 1em 0;
+	}
+
+	.note-actions a {
+		margin-left: 0;
+	}
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes rise-in {
+	from { opacity: 0; transform: translateY(30px); }
+	to { opacity: 1; transform: none; }
+}
+
+@keyframes fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes slide-from-right {
+	from { opacity: 0; transform: translateX(40px); }
+	to { opacity: 1; transform: none; }
+}
+
+@keyframes slide-from-left {
+	from { opacity: 0; transform: translateX(-40px); }
+	to { opacity: 1; transform: none; }
+}
+
+@keyframes spin {
+	to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+	0%, 100% { transform: scale(1); }
+	50% { transform: scale(1.06); }
+}
+
+@keyframes pop-in {
+	0% { opacity: 0; transform: scale(0.6); }
+	70% { transform: scale(1.1); }
+	100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes check-bounce {
+	0% { transform: scale(0) rotate(-30deg); }
+	60% { transform: scale(1.4) rotate(10deg); }
+	100% { transform: scale(1) rotate(0); }
+}
+
+@keyframes shake {
+	0%, 100% { transform: translateX(0); }
+	25% { transform: translateX(-6px); }
+	75% { transform: translateX(6px); }
+}
+
+@keyframes shrink-out {
+	to { opacity: 0; transform: scale(0.85); }
+}
+
+@keyframes draw {
+	to { stroke-dashoffset: 0; }
+}
+
+/* People who ask their system for less motion get instant changes instead of animations.
+   (Durations are made tiny rather than removed so "animationend" events still fire.) */
+@media (prefers-reduced-motion: reduce) {
+	*, *:before, *:after {
+		animation-duration: 0.01ms !important;
+		animation-delay: 0ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

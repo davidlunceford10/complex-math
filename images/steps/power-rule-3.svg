@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+	<title>The Power Rule, step 3: Differentiate −5x²</title>
+	<rect width="800" height="450" rx="14" fill="#2b3035"/>
+	<rect x="8" y="8" width="784" height="434" rx="10" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>
+	<rect x="32" y="30" width="134" height="34" rx="17" fill="#ffd866"/>
+	<text x="99" y="53" text-anchor="middle" font-family="'Open Sans', 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="800" fill="#2b3035" letter-spacing="1">STEP 3 / 5</text>
+	<text x="182" y="56" font-family="'Open Sans', 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#f2f4f7">Differentiate −5x²</text>
+	<text x="40" y="104" font-family="'Open Sans', 'Segoe UI', Arial, sans-serif" font-size="18" fill="#9aa3ad">Example: Differentiate f(x) = 3x⁴ − 5x² + 7</text>
+	<line x1="40" y1="124" x2="760" y2="124" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2" stroke-dasharray="6 6"/>
+	<text x="40" y="186.4" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="31.2" fill="#9aa3ad">f(x) = 3x⁴ − 5x² + 7</text>
+	<text x="40" y="238.4" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="31.2" fill="#9aa3ad">3 · 4x³ = 12x³</text>
+	<text x="40" y="290.4" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="37.44" fill="#ffd866">−5 · 2x¹ = −10x</text>
+	
+	<text x="768" y="428" text-anchor="end" font-family="'Open Sans', 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#ffffff" fill-opacity="0.25" letter-spacing="2">COMPLEX MATH</text>
+</svg>

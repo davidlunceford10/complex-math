@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+	<title>Circle Area and Circumference, step 3: Find the circumference</title>
+	<rect width="800" height="450" rx="14" fill="#2b3035"/>
+	<rect x="8" y="8" width="784" height="434" rx="10" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>
+	<rect x="32" y="30" width="134" height="34" rx="17" fill="#ffd866"/>
+	<text x="99" y="53" text-anchor="middle" font-family="'Open Sans', 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="800" fill="#2b3035" letter-spacing="1">STEP 3 / 4</text>
+	<text x="182" y="56" font-family="'Open Sans', 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#f2f4f7">Find the circumference</text>
+	<text x="40" y="104" font-family="'Open Sans', 'Segoe UI', Arial, sans-serif" font-size="18" fill="#9aa3ad">Example: A circle with a diameter of 10</text>
+	<line x1="40" y1="124" x2="760" y2="124" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2" stroke-dasharray="6 6"/>
+	<text x="40" y="181.5" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="27" fill="#9aa3ad">d = 10</text>
+	<text x="40" y="226.5" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="27" fill="#9aa3ad">r = d ÷ 2 = 5</text>
+	<text x="40" y="271.5" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="27" fill="#9aa3ad">A = π(5)²</text>
+	<text x="40" y="316.5" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="27" fill="#9aa3ad">A = 25π ≈ 78.54</text>
+	<text x="40" y="361.5" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="32.4" fill="#ffd866">C = 2π(5)</text>
+	<text x="40" y="406.5" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="32.4" fill="#ffd866">C = 10π ≈ 31.42</text>
+	<g>
+		<circle cx="645" cy="260" r="100" stroke="#f2f4f7" stroke-width="3" fill="none" stroke-linejoin="round"/>
+		<line x1="545" y1="260" x2="745" y2="260" stroke="#9aa3ad" stroke-width="2" stroke-dasharray="6 6"/>
+		<line x1="645" y1="260" x2="716" y2="189" stroke="#ffd866" stroke-width="3"/>
+		<circle cx="645" cy="260" r="4" fill="#f2f4f7"/>
+		<text x="675" y="210" text-anchor="end" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="20" fill="#f2f4f7">r = 5</text>
+		<text x="645" y="288" text-anchor="middle" font-family="'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive" font-size="20" fill="#f2f4f7">d = 10</text>
+	</g>
+	<text x="768" y="428" text-anchor="end" font-family="'Open Sans', 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="800" fill="#ffffff" fill-opacity="0.25" letter-spacing="2">COMPLEX MATH</text>
+</svg>
