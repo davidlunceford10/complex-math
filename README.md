@@ -23,6 +23,6 @@ See [docs/HOW-IT-WORKS.md](docs/HOW-IT-WORKS.md) for a walkthrough of the HTML, 
 
 ## Credits
 
-- Layout: [ZeroFour by HTML5 UP](https://html5up.net) (CCA 3.0, credit kept in the footer)
+- Layout: [ZeroFour by HTML5 UP](https://html5up.net) (CCA 3.0)
 - Photos: [Unsplash](https://unsplash.com)
 - Icons: [Font Awesome](https://fontawesome.com)
