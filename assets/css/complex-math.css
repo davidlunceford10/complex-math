@@ -854,7 +854,12 @@ button {
 			outline-offset: 2px;
 		}
 
+		/* main.css removes the native look from every input, which hides radios and checkboxes. */
 		.feedback-form .choice input {
+			appearance: auto;
+			-webkit-appearance: auto;
+			width: 1.1em;
+			height: 1.1em;
 			accent-color: var(--blue);
 			margin: 0;
 		}
