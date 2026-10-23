@@ -36,6 +36,7 @@ The HTML pages are mostly **empty frames**: header, nav, footer, and a few place
 | `notes.html` | Lists every note the student saved |
 | `data/formulas.json` | All topics, formulas, explanations, and steps |
 | `images/chalkboard.jpg` | Header background photo |
+| `images/favicon.svg` | Browser-tab icon: the yellow √x from the logo |
 | `images/steps/*.svg` | One picture per step of every formula (51 total), made by the generator script |
 | `tools/generate-step-images.mjs` | Node script that draws the step pictures from the JSON |
 | `assets/css/main.css` | The ZeroFour template's styles (grid, header, nav, buttons, footer) |
