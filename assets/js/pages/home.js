@@ -5,6 +5,9 @@ import { getTopics } from '../modules/data.js';
 import { getAllNotes } from '../modules/notes-store.js';
 import { buildUrl } from '../modules/url.js';
 import { escapeHtml, revealOnScroll } from '../modules/ui.js';
+import { initNav } from '../modules/nav.js';
+
+initNav();
 
 const cards = [...document.querySelectorAll('.flip-card')];
 
@@ -45,19 +48,17 @@ function fillSpotlight(topics) {
 	spotlight.innerHTML = `
 		<header>
 			<p>${escapeHtml(topic.name)}</p>
-			<h3><a href="${buildUrl(topic.page, { formula: formula.id })}">${escapeHtml(formula.name)}</a></h3>
+			<h4><a href="${buildUrl(topic.page, { formula: formula.id })}">${escapeHtml(formula.name)}</a></h4>
 		</header>
 		<p class="formula-display">${escapeHtml(formula.formula)}</p>
 		<p>${escapeHtml(formula.summary)}</p>
-		<footer>
-			<a href="${buildUrl(topic.page, { formula: formula.id, step: 1 })}" class="button alt icon solid fa-play-circle">Walk through it</a>
-		</footer>`;
+		<a href="${buildUrl(topic.page, { formula: formula.id, step: 1 })}" class="button icon solid fa-play-circle">Walk through it</a>`;
 }
 
 function showNoteCount() {
-	const count = Object.keys(getAllNotes()).length;
+	const count = getAllNotes().length;
 	const el = document.querySelector('#note-count');
-	if (count) el.textContent = `You have ${count} saved ${count === 1 ? 'note' : 'notes'}.`;
+	if (count) el.textContent = ` You have ${count} saved ${count === 1 ? 'note' : 'notes'}.`;
 }
 
 showNoteCount();

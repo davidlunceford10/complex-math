@@ -55,7 +55,7 @@ export function createSlideshow(formula, startStep = 1, onChange = () => {}) {
 		title.textContent = `Step ${index + 1}: ${step.title}`;
 		text.textContent = step.text;
 		counter.textContent = `Step ${index + 1} of ${steps.length}`;
-		bar.style.width = `${((index + 1) / steps.length) * 100}%`;
+		bar.style.transform = `scaleX(${(index + 1) / steps.length})`;
 		back.disabled = index === 0;
 		next.disabled = index === steps.length - 1;
 		dots.forEach((dot, i) => dot.toggleAttribute('aria-current', i === index));

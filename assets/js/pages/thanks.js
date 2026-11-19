@@ -2,6 +2,9 @@
 // (thanks.html?name=Ana&type=Question&topic=algebra) to personalize the message.
 
 import { getParam } from '../modules/url.js';
+import { initNav } from '../modules/nav.js';
+
+initNav();
 
 const name = getParam('name');
 const type = getParam('type');

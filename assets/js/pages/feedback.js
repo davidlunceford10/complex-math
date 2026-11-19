@@ -8,6 +8,9 @@ import { getTopics } from '../modules/data.js';
 import { getParam, buildUrl } from '../modules/url.js';
 import { validateForm, liveValidate } from '../modules/validation.js';
 import { escapeHtml } from '../modules/ui.js';
+import { initNav } from '../modules/nav.js';
+
+initNav();
 
 const form = document.querySelector('#feedback-form');
 const topicSelect = form.elements.topic;
@@ -105,7 +108,7 @@ form.addEventListener('submit', async (event) => {
 		if (!response.ok || !result.success) throw new Error(result.message || 'The message was not accepted.');
 
 		window.location.href = buildUrl('thanks.html', {
-			name: data.name.split(' ')[0],
+			name: data.name.trim().split(/\s+/)[0],
 			type: data.type,
 			topic: data.topic
 		});

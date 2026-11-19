@@ -1,9 +1,12 @@
-// Runs on notes.html: lists every note saved in localStorage.
+// Runs on notes.html: lists every note saved in localStorage, newest first.
 // URL parameter: ?topic=<id> shows only that topic's notes.
 
 import { getAllNotes, deleteNote, clearNotes } from '../modules/notes-store.js';
 import { getParam, buildUrl } from '../modules/url.js';
 import { escapeHtml, formatDate } from '../modules/ui.js';
+import { initNav } from '../modules/nav.js';
+
+initNav();
 
 const list = document.querySelector('#notes-list');
 const filters = document.querySelector('#note-filters');
@@ -25,19 +28,16 @@ function renderFilters() {
 }
 
 function render() {
-	const notes = Object.entries(getAllNotes())
-		.map(([formulaId, note]) => ({ formulaId, ...note }))
-		.filter((note) => !topicFilter || note.topicId === topicFilter)
-		.sort((a, b) => b.updated.localeCompare(a.updated));
+	const notes = getAllNotes().filter((note) => !topicFilter || note.topicId === topicFilter);
 
 	clearArea.hidden = notes.length === 0 || Boolean(topicFilter);
 
 	if (!notes.length) {
 		list.innerHTML = `
 			<div class="empty-notes">
-				<p class="icon solid fa-sticky-note"></p>
+				<p class="icon solid fa-sticky-note" aria-hidden="true"></p>
 				<h3>No notes ${topicFilter ? 'for this topic ' : ''}yet</h3>
-				<p>Open any formula, expand <strong>My notes on this formula</strong>, and press Save. Your notes will show up here.</p>
+				<p>Open any formula, write in the <strong>My notes on this formula</strong> box under the worked example, and press Save. Your notes will show up here.</p>
 				<p>
 					<a href="algebra.html" class="button small">Algebra</a>
 					<a href="geometry.html" class="button small">Geometry</a>
@@ -48,14 +48,14 @@ function render() {
 	}
 
 	list.innerHTML = notes.map((note) => `
-		<article class="note-card reveal is-visible" data-id="${escapeHtml(note.formulaId)}">
+		<article class="note-card" data-id="${escapeHtml(note.id)}">
 			<header>
 				<p>${escapeHtml(note.topicName)} · saved ${formatDate(note.updated)}</p>
 				<h3>${escapeHtml(note.formulaName)}</h3>
 			</header>
 			<p class="note-text">${escapeHtml(note.text)}</p>
 			<footer>
-				<a href="${buildUrl(`${note.topicId}.html`, { formula: note.formulaId })}" class="button small icon solid fa-edit">Open lesson</a>
+				<a href="${escapeHtml(buildUrl(`${note.topicId}.html`, { formula: note.formulaId }))}" class="button small icon solid fa-edit">Open lesson</a>
 				<button type="button" class="button small alt icon solid fa-trash-alt" data-action="delete">Delete</button>
 			</footer>
 		</article>

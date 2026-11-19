@@ -26,14 +26,5 @@ export async function getTopic(topicId) {
 	return topics.find((topic) => topic.id === topicId);
 }
 
-// Returns { topic, formula } for a formula id, or undefined if no formula matches.
-export async function findFormula(formulaId) {
-	const topics = await getTopics();
-	for (const topic of topics) {
-		const formula = topic.formulas.find((f) => f.id === formulaId);
-		if (formula) return { topic, formula };
-	}
-}
-
 // Step pictures follow a naming pattern: images/steps/<formula-id>-<step number>.svg
 export const stepImage = (formulaId, stepNumber) => `images/steps/${formulaId}-${stepNumber}.svg`;

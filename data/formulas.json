@@ -7,7 +7,7 @@
 			"icon": "fa-superscript",
 			"tagline": "Solve for the unknown",
 			"description": "Algebra is the language the rest of math is written in. Learn to isolate variables, read the slope of a line, factor expressions, and use the quadratic formula without second-guessing every sign.",
-			"image": "https://images.unsplash.com/photo-1699275303936-302a8d351a80?auto=format&fit=crop&w=800&h=500&q=80",
+			"image": "images/topics/algebra-800.webp",
 			"imageAlt": "Handwritten algebra equations on grid paper",
 			"formulas": [
 				{
@@ -167,7 +167,7 @@
 			"icon": "fa-shapes",
 			"tagline": "Measure shapes and space",
 			"description": "Geometry is about the size and shape of things. Learn the formulas for right triangles, areas, circles, and volume, and how to tell which measurement goes where.",
-			"image": "https://images.unsplash.com/photo-1764948620396-45f5b5fdd73e?auto=format&fit=crop&w=800&h=500&q=80",
+			"image": "images/topics/geometry-800.webp",
 			"imageAlt": "A drafting compass drawing a circle on paper",
 			"formulas": [
 				{
@@ -302,7 +302,7 @@
 			"icon": "fa-chart-line",
 			"tagline": "Study change and area",
 			"description": "Calculus describes how things change. Learn to evaluate limits, take derivatives with the power and chain rules, and find the area under a curve with a definite integral.",
-			"image": "https://images.unsplash.com/photo-1754304342349-ac409efb67c7?auto=format&fit=crop&w=800&h=500&q=80",
+			"image": "images/topics/calculus-800.webp",
 			"imageAlt": "A printed graph of a function with labeled axes",
 			"formulas": [
 				{
